@@ -14,8 +14,8 @@ bot = Bot(ACCESS_TOKEN)
 def receive():
     if request.method == 'GET':
         # If GET check if the request was made from Facebook
-        token = request.args.get("hub.verify_token")
-        return verify(token)
+        token_sent = request.args.get("hub.verify_token")
+        return verify(token_sent)
     else:
         # If POST request get the message that was sent
         data = request.get_json()
@@ -44,6 +44,7 @@ def verify(token):
 
 def send(id, message):
     bot.send_text_message(id, message)
+    return 'message send'
 
 
 if __name__ == '__main__':
