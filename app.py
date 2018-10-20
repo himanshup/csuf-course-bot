@@ -26,11 +26,11 @@ def receive():
                     recipient_id = message['sender']['id']
                     if message['message'].get('text'):
                         msg = message['message'].get('text')
-                        send_message(
+                        send(
                             recipient_id, 'This might take a while...')
-                        send_message(recipient_id, msg)
+                        send(recipient_id, msg)
                     else:
-                        send_message(
+                        send(
                             recipient_id, 'Invalid, please enter a valid course (e.g. cpsc 121)')
 
     return 'message received', 200
