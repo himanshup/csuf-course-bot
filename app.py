@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from flask import Flask, request
 from pymessenger.bot import Bot
+from scrape import checkAvailability
 import os
 
 app = Flask(__name__)
@@ -28,7 +29,7 @@ def receive():
                         msg = message['message'].get('text')
                         send(
                             recipient_id, 'This might take a while...')
-                        send(recipient_id, msg)
+                        getMessage(recipient_id, msg)
                     else:
                         send(
                             recipient_id, 'Invalid, please enter a valid course (e.g. cpsc 121)')
@@ -42,12 +43,17 @@ def verify(token):
     return 'invalid verify token'
 
 
-def send(id, msg):
+def getMessage(id, message):
     messages = msg.split(' ')
+    subject = messages[0]
+    course = messages[1]
+    response = checkAvailability(subject.upper(), course)
+    send(id, response)
 
-    for i in range(len(messages)):
-        bot.send_text_message(id, messages[i])
-    return 'message send'
+
+def send(id, msg):
+    bot.send_text_message(id, msg)
+    return 'message sent'
 
 
 if __name__ == '__main__':
