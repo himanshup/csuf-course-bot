@@ -42,8 +42,11 @@ def verify(token):
     return 'invalid verify token'
 
 
-def send(id, message):
-    bot.send_text_message(id, message)
+def send(id, msg):
+    arr = msg.split(' ')
+
+    for i in range(len(arr)):
+        bot.send_text_message(id, message[i])
     return 'message send'
 
 
