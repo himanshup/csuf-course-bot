@@ -3,15 +3,16 @@ certifi==2018.10.15
 chardet==3.0.4
 Click==7.0
 Flask==1.0.2
-gunicorn==19.9.0
 idna==2.7
 ItsDangerous==1.0.0
 Jinja2==2.10
+lxml==4.2.5
 MarkupSafe==1.0
 pymessenger==0.0.7.0
 python-dotenv==0.9.1
 requests==2.20.0
 requests-toolbelt==0.8.0
+selenium==3.14.1
 six==1.11.0
 urllib3==1.24
 Werkzeug==0.14.1
