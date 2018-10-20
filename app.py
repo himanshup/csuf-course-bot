@@ -43,10 +43,10 @@ def verify(token):
 
 
 def send(id, msg):
-    arr = msg.split(' ')
+    messages = msg.split(' ')
 
-    for i in range(len(arr)):
-        bot.send_text_message(id, message[i])
+    for i in range(len(messages)):
+        bot.send_text_message(id, messages[i])
     return 'message send'
 
 
