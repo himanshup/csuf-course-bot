@@ -20,7 +20,7 @@ def receive():
         # If POST request get the message that was sent
         data = request.get_json()
         for entry in data['entry']:
-            messaging = event['messaging']
+            messaging = entry['messaging']
             for message in messaging:
                 if message.get('message'):
                     recipient_id = message['sender']['id']
