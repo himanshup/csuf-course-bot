@@ -15,7 +15,7 @@ def receive():
     if request.method == 'GET':
         # If GET check if the request was made from Facebook
         token = request.args.get("hub.verify_token")
-        return verify_token(token)
+        return verify(token)
     else:
         # If POST request get the message that was sent
         data = request.get_json()
