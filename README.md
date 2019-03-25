@@ -27,10 +27,9 @@ VERIFY_TOKEN=''
 
 Set up a [ngrok](https://ngrok.com/) server as a proxy (localhost URL won't work for Facebook Messenger bots).  
 
-Run `ngrok http 3000`, copy the web interface URL, and add that as a callback URL for your Facebook app.
+Run `python app.py` in one terminal and `ngrok http 3000` in another (both in the directory of the project).  
 
-Host your bot on Heroku if you want 100% uptime.
-
+Add the web interface URL as a callback URl for your Facebook app and your bot should work.
 
 ## Files
 
