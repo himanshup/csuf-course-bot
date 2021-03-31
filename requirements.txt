@@ -6,7 +6,7 @@ Flask==1.0.2
 idna==2.7
 ItsDangerous==1.0.0
 Jinja2==2.10
-lxml==4.2.5
+lxml==4.6.3
 MarkupSafe==1.0
 pymessenger==0.0.7.0
 python-dotenv==0.9.1
